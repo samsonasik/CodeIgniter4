@@ -3,14 +3,11 @@
 use CodeIgniter\Services;
 use Config\App;
 use Config\Autoload;
-use Kahlan\Filter\Filter;
-use Kahlan\Reporter\Coverage;
-use Kahlan\Reporter\Coverage\Driver\Xdebug;
 
-define('ENVIRONMENT', 'testing');
-define('BASEPATH',    'system/');
-define('APPPATH',     'application/');
-define('WRITEPATH',   'writable/');
+define('ENVIRONMENT', 'testing'     . DIRECTORY_SEPARATOR);
+define('BASEPATH',    'system/'     . DIRECTORY_SEPARATOR);
+define('APPPATH',     'application/' . DIRECTORY_SEPARATOR);
+define('WRITEPATH',   'writable/'    . DIRECTORY_SEPARATOR);
 define('CI_DEBUG',    1);
 
 require BASEPATH . 'Autoloader/Autoloader.php';
@@ -28,22 +25,3 @@ require BASEPATH . 'Common.php';
 
 $config = new App();
 Services::exceptions($config, true)->initialize();
-
-
-Filter::register('kahlan.coverage', function($chain) {
-
-    if (!extension_loaded('xdebug')) {
-        return;
-    }
-
-    $reporters = $this->reporters();
-    $coverage = new Coverage([
-        'verbosity' => $this->commandLine()->get('coverage'),
-        'driver'    => new Xdebug(),
-        'path'      => 'application',
-        'colors'    => !$this->commandLine()->get('no-colors'),
-    ]);
-
-    $reporters->add('coverage', $coverage);
-});
-Filter::apply($this, 'coverage', 'kahlan.coverage');

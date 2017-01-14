@@ -6,7 +6,7 @@ use Config\App;
 use CodeIgniter\CodeIgniter;
 use CodeIgniter\Services;
 
-describe('Home', function () {
+describe('Home Dispatch', function () {
 
     beforeAll(function () {
 
@@ -31,7 +31,7 @@ describe('Home', function () {
             ob_start();
             $this->codeIgniter->run();
             $actual = ob_get_clean();
-
+            
             expect($actual)->toContain('Welcome to CodeIgniter');
 
         });
