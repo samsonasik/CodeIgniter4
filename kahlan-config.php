@@ -22,6 +22,4 @@ $loader->initialize(new Autoload());
 $loader->register();
 
 require BASEPATH . 'Common.php';
-
-$config = new App();
-Services::exceptions($config, true)->initialize();
+Services::exceptions(new App(), true)->initialize();
