@@ -5,9 +5,9 @@ use Config\App;
 use Config\Autoload;
 
 define('ENVIRONMENT', 'testing'     . DIRECTORY_SEPARATOR);
-define('BASEPATH',    'system/'     . DIRECTORY_SEPARATOR);
-define('APPPATH',     'application/' . DIRECTORY_SEPARATOR);
-define('WRITEPATH',   'writable/'    . DIRECTORY_SEPARATOR);
+define('BASEPATH',    'system'      . DIRECTORY_SEPARATOR);
+define('APPPATH',     'application' . DIRECTORY_SEPARATOR);
+define('WRITEPATH',   'writable'    . DIRECTORY_SEPARATOR);
 define('CI_DEBUG',    1);
 
 require BASEPATH . 'Autoloader/Autoloader.php';
