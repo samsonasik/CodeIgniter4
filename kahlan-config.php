@@ -4,7 +4,7 @@ use CodeIgniter\Services;
 use Config\App;
 use Config\Autoload;
 
-define('ENVIRONMENT', 'testing'     . DIRECTORY_SEPARATOR);
+define('ENVIRONMENT', 'testing');
 define('BASEPATH',    'system'      . DIRECTORY_SEPARATOR);
 define('APPPATH',     'application' . DIRECTORY_SEPARATOR);
 define('WRITEPATH',   'writable'    . DIRECTORY_SEPARATOR);
