@@ -106,7 +106,7 @@ class RouteCollection implements RouteCollectionInterface
 	 * A callable that will be shown
 	 * when the route cannot be matched.
 	 *
-	 * @var string|\Closure
+	 * @var string|callable
 	 */
 	protected $override404;
 
@@ -332,7 +332,7 @@ class RouteCollection implements RouteCollectionInterface
 	 *
 	 * @return RouteCollectionInterface
 	 */
-	public function set404Override($callable = null): RouteCollectionInterface
+	public function set404Override(callable $callable = null): RouteCollectionInterface
 	{
 		$this->override404 = $callable;
 
@@ -345,7 +345,7 @@ class RouteCollection implements RouteCollectionInterface
 	 * Returns the 404 Override setting, which can be null, a closure
 	 * or the controller/string.
 	 *
-	 * @return string|\Closure|null
+	 * @return string|callable|null
 	 */
 	public function get404Override()
 	{
