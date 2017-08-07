@@ -55,7 +55,7 @@ class Time extends DateTime
 {
 
 	/**
-	 * @var string
+	 * @var DateTimeZone
 	 */
 	protected $timezone;
 
