@@ -178,16 +178,14 @@ class FileLocator
 
 		foreach ($this->namespaces as $name => $folder)
 		{
-			$folder = rtrim($folder, '/') . '/';
+                       $folder = rtrim($folder, '/') . '/';
+                       $file   = $folder . $path;
 
-			if (file_exists($folder . $path))
+                       if (file_exists($file) && ! in_array($file, $foundPaths))
 			{
-				$foundPaths[] = $folder . $path;
+				$foundPaths[] = $file;
 			}
 		}
-
-		// Remove any duplicates
-		$foundPaths = array_unique($foundPaths);
 
 		return $foundPaths;
 	}
