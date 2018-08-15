@@ -33,12 +33,14 @@ class HeaderTest extends \CIUnitTestCase
 		$name  = 'foo';
 		$value = ['bar', 'baz'];
 
-		$header = new \CodeIgniter\HTTP\Header();
+		$header = new \CodeIgniter\HTTP\Header($name);
+               $this->assertEquals($name, $header->getName());
+               $this->assertEquals(null, $header->getValue());
 
+               $name = 'bat';
 		$header->setName($name)->setValue($value);
-
 		$this->assertEquals($name, $header->getName());
-		$this->assertEquals($value, $header->getValue());
+               $this->assertEquals($value, $header->getValue());  
 	}
 
 	//--------------------------------------------------------------------

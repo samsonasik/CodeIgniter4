@@ -57,7 +57,7 @@ class Header
 	 * The value of the header. May have more than one
 	 * value. If so, will be an array of strings.
 	 *
-	 * @var string|array
+	 * @var string|array|null
 	 */
 	protected $value;
 
@@ -66,10 +66,10 @@ class Header
 	/**
 	 * Header constructor. If a name or value is provided they will be set.
 	 *
-	 * @param string|null        $name
+	 * @param string             $name
 	 * @param string|array|null  $value
 	 */
-	public function __construct(string $name = null, $value = null)
+	public function __construct(string $name, $value = null)
 	{
 		$this->name = $name;
 		$this->value = $value;
@@ -121,7 +121,7 @@ class Header
 	/**
 	 * Sets the value of the header, overwriting any previous value(s).
 	 *
-	 * @param null $value
+	 * @param string|array|null $value
 	 *
 	 * @return $this
 	 */
@@ -138,7 +138,7 @@ class Header
 	 * Appends a value to the list of values for this header. If the
 	 * header is a single value string, it will be converted to an array.
 	 *
-	 * @param null $value
+	 * @param string|array|null $value
 	 *
 	 * @return $this
 	 */
