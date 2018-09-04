@@ -73,7 +73,7 @@ class FileRulesTest extends \CIUnitTestCase
 	public function testMaxSize()
 	{
 		$this->validation->setRules([
-			'avatar' => "max_size[avatar,100]",
+			'avatar' => "max_size[avatar,10000]",
 		]);
 
 		$this->assertTrue($this->validation->run([]));
@@ -205,5 +205,5 @@ class FileRulesTest extends \CIUnitTestCase
 		]);
 		$this->assertFalse($this->validation->run([]));
 	}
-	
+
 }
