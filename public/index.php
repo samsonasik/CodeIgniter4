@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // Valid PHP Version?
 $minPHPVersion = '7.1';
 if (phpversion() < $minPHPVersion)
