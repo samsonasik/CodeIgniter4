@@ -135,7 +135,7 @@ class CodeIgniterTest extends \CIUnitTestCase
 		$_SERVER['argc'] = 2;
 
 		// Inject mock router.
-		$routes = new RouteCollection(Services::locator(), new \Config\Modules());
+		$routes = Services::routes();
 		$routes->setAutoRoute(false);
 		$routes->set404Override(function () {
 			return '404 Override by Closure.';
