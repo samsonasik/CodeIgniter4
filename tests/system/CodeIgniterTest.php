@@ -88,7 +88,7 @@ class CodeIgniterTest extends \CIUnitTestCase
 		// Inject mock router.
 		$routes = Services::routes();
 		$routes->add('pages/(:segment)', function ($segment) {
-			echo 'You want to see "' . esc($segment) . '" page.';
+			return 'You want to see "' . esc($segment) . '" page.';
 		});
 		$router = Services::router($routes);
 		Services::injectMock('router', $router);
@@ -138,7 +138,7 @@ class CodeIgniterTest extends \CIUnitTestCase
 		$routes = new RouteCollection(Services::locator(), new \Config\Modules());
 		$routes->setAutoRoute(false);
 		$routes->set404Override(function () {
-			echo '404 Override by Closure.';
+			return '404 Override by Closure.';
 		});
 		$router = Services::router($routes);
 		Services::injectMock('router', $router);
