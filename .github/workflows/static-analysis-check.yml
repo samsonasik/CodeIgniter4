@@ -3,12 +3,6 @@ name: "Static Analysis Check"
 on:
   pull_request:
   push:
-    branches:
-      - 'develop'
-      - '4.1'
-    paths:
-      - 'app'
-      - 'system'
 
 jobs:
   build:
