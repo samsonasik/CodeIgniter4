@@ -57,12 +57,12 @@ final class GenerateKeyTest extends CIUnitTestCase
     /**
      * Gets buffer contents then releases it.
      */
-    protected function getBuffer(): string
+    private function getBuffer(): string
     {
         return $this->getStreamFilterBuffer();
     }
 
-    protected function resetEnvironment(): void
+    private function resetEnvironment(): void
     {
         putenv('encryption.key');
         unset($_ENV['encryption.key'], $_SERVER['encryption.key']);

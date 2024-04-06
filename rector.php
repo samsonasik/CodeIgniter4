@@ -57,6 +57,7 @@ use Utils\Rector\UnderscoreToCamelCaseVariableNameRector;
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([
         SetList::DEAD_CODE,
+        SetList::PRIVATIZATION,
         LevelSetList::UP_TO_PHP_74,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
         PHPUnitSetList::PHPUNIT_100,

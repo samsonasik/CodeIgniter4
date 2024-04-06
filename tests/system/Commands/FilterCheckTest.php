@@ -35,7 +35,7 @@ final class FilterCheckTest extends CIUnitTestCase
         parent::tearDown();
     }
 
-    protected function getBuffer()
+    private function getBuffer()
     {
         return $this->getStreamFilterBuffer();
     }

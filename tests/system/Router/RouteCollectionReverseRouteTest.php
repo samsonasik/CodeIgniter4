@@ -32,7 +32,7 @@ final class RouteCollectionReverseRouteTest extends CIUnitTestCase
         $this->resetFactories();
     }
 
-    protected function getCollector(array $config = [], array $files = [], $moduleConfig = null)
+    private function getCollector(array $config = [], $moduleConfig = null)
     {
         $defaults = [
             'Config' => APPPATH . 'Config',

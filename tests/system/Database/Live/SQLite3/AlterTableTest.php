@@ -262,7 +262,7 @@ final class AlterTableTest extends CIUnitTestCase
         $this->seeInDatabase('foo', ['email' => 'funkalicious@example.com']);
     }
 
-    protected function createTable(string $tableName = 'foo'): void
+    private function createTable(string $tableName = 'foo'): void
     {
         // Create support table for foreign keys
         $this->forge->addField([

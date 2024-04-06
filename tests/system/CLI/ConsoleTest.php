@@ -138,7 +138,7 @@ final class ConsoleTest extends CIUnitTestCase
     /**
      * @param array $command
      */
-    protected function initCLI(...$command): void
+    private function initCLI(...$command): void
     {
         $_SERVER['argv'] = ['spark', ...$command];
         $_SERVER['argc'] = count($_SERVER['argv']);

@@ -550,7 +550,7 @@ final class CommonFunctionsTest extends CIUnitTestCase
         slash_item('supportedLocales');
     }
 
-    protected function injectSessionMock(): void
+    private function injectSessionMock(): void
     {
         $sessionConfig = new SessionConfig();
 

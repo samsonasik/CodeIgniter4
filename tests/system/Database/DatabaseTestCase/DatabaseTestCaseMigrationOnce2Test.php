@@ -14,7 +14,6 @@ namespace CodeIgniter\Database\DatabaseTestCase;
 use CodeIgniter\Test\CIUnitTestCase;
 use CodeIgniter\Test\DatabaseTestTrait;
 use Config\Database;
-use Config\Services;
 
 /**
  * DatabaseTestCaseMigrationOnce1Test and DatabaseTestCaseMigrationOnce2Test
@@ -62,14 +61,6 @@ final class DatabaseTestCaseMigrationOnce2Test extends CIUnitTestCase
         $this->setUpMethods[] = 'setUpAddNamespace';
 
         parent::setUp();
-    }
-
-    protected function setUpAddNamespace(): void
-    {
-        Services::autoloader()->addNamespace(
-            'Tests\Support\MigrationTestMigrations',
-            SUPPORTPATH . 'MigrationTestMigrations'
-        );
     }
 
     protected function tearDown(): void

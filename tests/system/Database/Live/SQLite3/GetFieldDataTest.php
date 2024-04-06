@@ -103,7 +103,7 @@ final class GetFieldDataTest extends AbstractGetFieldDataTest
         $this->assertSameFieldData($expected, $fields);
     }
 
-    protected function createTableCompositePrimaryKey()
+    private function createTableCompositePrimaryKey()
     {
         $this->forge->dropTable($this->table, true);
 

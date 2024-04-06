@@ -32,7 +32,7 @@ final class ContentSecurityPolicyTest extends CIUnitTestCase
     private ?ContentSecurityPolicy $csp = null;
 
     // Having this method as setUp() doesn't work - can't find Config\App !?
-    protected function prepare(bool $CSPEnabled = true): void
+    private function prepare(bool $CSPEnabled = true): void
     {
         $this->resetServices();
 
@@ -43,7 +43,7 @@ final class ContentSecurityPolicyTest extends CIUnitTestCase
         $this->csp = $this->response->getCSP();
     }
 
-    protected function work(string $parm = 'Hello')
+    private function work(string $parm = 'Hello')
     {
         $body = $parm;
         $this->response->setBody($body);

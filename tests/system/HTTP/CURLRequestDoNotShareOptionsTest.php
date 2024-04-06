@@ -37,7 +37,7 @@ final class CURLRequestDoNotShareOptionsTest extends CIUnitTestCase
         $this->request = $this->getRequest();
     }
 
-    protected function getRequest(array $options = [])
+    private function getRequest(array $options = [])
     {
         $uri = isset($options['base_uri']) ? new URI($options['base_uri']) : new URI();
         $app = new App();

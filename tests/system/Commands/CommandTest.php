@@ -40,7 +40,7 @@ final class CommandTest extends CIUnitTestCase
         $this->commands = Services::commands();
     }
 
-    protected function getBuffer()
+    private function getBuffer()
     {
         return $this->getStreamFilterBuffer();
     }

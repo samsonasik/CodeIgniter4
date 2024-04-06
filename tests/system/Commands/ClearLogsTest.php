@@ -34,7 +34,7 @@ final class ClearLogsTest extends CIUnitTestCase
         $this->date = date('Y-m-d', strtotime('+1 year'));
     }
 
-    protected function createDummyLogFiles(): void
+    private function createDummyLogFiles(): void
     {
         $date = $this->date;
         $path = WRITEPATH . 'logs' . DIRECTORY_SEPARATOR . "log-{$date}.log";

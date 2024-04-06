@@ -32,7 +32,7 @@ final class ClearDebugbarTest extends CIUnitTestCase
         $this->time = time();
     }
 
-    protected function createDummyDebugbarJson(): void
+    private function createDummyDebugbarJson(): void
     {
         $time = $this->time;
         $path = WRITEPATH . 'debugbar' . DIRECTORY_SEPARATOR . "debugbar_{$time}.json";

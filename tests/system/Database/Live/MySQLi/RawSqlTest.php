@@ -40,7 +40,7 @@ final class RawSqlTest extends CIUnitTestCase
         }
     }
 
-    protected function addSqlFunction(): void
+    private function addSqlFunction(): void
     {
         $this->db->query('DROP FUNCTION IF EXISTS setDateTime');
 

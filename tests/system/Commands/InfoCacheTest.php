@@ -39,7 +39,7 @@ final class InfoCacheTest extends CIUnitTestCase
         config('Cache')->handler = 'file';
     }
 
-    protected function getBuffer()
+    private function getBuffer()
     {
         return $this->getStreamFilterBuffer();
     }

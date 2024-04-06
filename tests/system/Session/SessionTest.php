@@ -40,7 +40,7 @@ final class SessionTest extends CIUnitTestCase
         $_SESSION = [];
     }
 
-    protected function getInstance($options = [])
+    private function getInstance($options = [])
     {
         $defaults = [
             'driver'            => FileHandler::class,

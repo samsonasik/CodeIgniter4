@@ -42,7 +42,7 @@ final class ResponseTraitTest extends CIUnitTestCase
         $this->formatter = new JSONFormatter();
     }
 
-    protected function makeController(array $userConfig = [], string $routePath = '', array $userHeaders = [])
+    private function makeController(string $routePath = '', array $userHeaders = [])
     {
         $config = new App();
 
@@ -115,7 +115,7 @@ final class ResponseTraitTest extends CIUnitTestCase
     public function testNoFormatterJSON(): void
     {
         $this->formatter = null;
-        $controller      = $this->makeController([], '', ['Accept' => 'application/json']);
+        $controller      = $this->makeController('', ['Accept' => 'application/json']);
 
         $this->invoke($controller, 'respondCreated', [['id' => 3], 'A Custom Reason']);
 
@@ -133,7 +133,7 @@ final class ResponseTraitTest extends CIUnitTestCase
     public function testNoFormatter(): void
     {
         $this->formatter = null;
-        $controller      = $this->makeController([], '', ['Accept' => 'application/json']);
+        $controller      = $this->makeController('', ['Accept' => 'application/json']);
 
         $this->invoke($controller, 'respondCreated', ['A Custom Reason']);
 
@@ -484,7 +484,7 @@ final class ResponseTraitTest extends CIUnitTestCase
         $original                = $_SERVER;
         $_SERVER['CONTENT_TYPE'] = $mimeType;
 
-        $this->makeController([], '', ['Accept' => $mimeType]);
+        $this->makeController('', ['Accept' => $mimeType]);
         $this->assertSame($mimeType, $this->request->getHeaderLine('Accept'), 'Request header...');
 
         $this->response->setContentType($contentType);

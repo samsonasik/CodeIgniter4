@@ -30,12 +30,12 @@ final class DatabaseCommandsTest extends CIUnitTestCase
         parent::tearDown();
     }
 
-    protected function getBuffer(): string
+    private function getBuffer(): string
     {
         return $this->getStreamFilterBuffer();
     }
 
-    protected function clearBuffer(): void
+    private function clearBuffer(): void
     {
         $this->resetStreamFilterBuffer();
     }

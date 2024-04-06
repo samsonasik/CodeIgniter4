@@ -23,7 +23,7 @@ final class HelpCommandTest extends CIUnitTestCase
 {
     use StreamFilterTrait;
 
-    protected function getBuffer()
+    private function getBuffer()
     {
         return $this->getStreamFilterBuffer();
     }

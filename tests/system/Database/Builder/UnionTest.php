@@ -87,7 +87,7 @@ final class UnionTest extends CIUnitTestCase
         $this->assertSame($expected, $this->buildSelect($builder));
     }
 
-    protected function buildSelect(BaseBuilder $builder): string
+    private function buildSelect(BaseBuilder $builder): string
     {
         return str_replace("\n", ' ', $builder->getCompiledSelect());
     }

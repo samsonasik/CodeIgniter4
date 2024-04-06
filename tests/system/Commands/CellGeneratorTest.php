@@ -37,7 +37,7 @@ final class CellGeneratorTest extends CIUnitTestCase
         }
     }
 
-    protected function getFileContents(string $filepath): string
+    private function getFileContents(string $filepath): string
     {
         if (! is_file($filepath)) {
             return '';

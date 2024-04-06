@@ -38,7 +38,7 @@ final class FactoriesTest extends CIUnitTestCase
         Factories::reset();
     }
 
-    protected function getFactoriesStaticProperty(...$params)
+    private function getFactoriesStaticProperty(...$params)
     {
         // First parameter is the actual property
         $name = array_shift($params);

@@ -37,7 +37,7 @@ final class RoutesTest extends CIUnitTestCase
         parent::tearDown();
     }
 
-    protected function getBuffer()
+    private function getBuffer()
     {
         return str_replace(PHP_EOL, "\n", $this->getStreamFilterBuffer());
     }

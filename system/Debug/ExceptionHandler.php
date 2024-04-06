@@ -124,7 +124,7 @@ final class ExceptionHandler extends BaseExceptionHandler implements ExceptionHa
      *
      * @return string The filename of the view file to use
      */
-    protected function determineView(
+    private function determineView(
         Throwable $exception,
         string $templatePath,
         int $statusCode = 500

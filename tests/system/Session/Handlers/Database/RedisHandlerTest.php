@@ -29,7 +29,7 @@ final class RedisHandlerTest extends CIUnitTestCase
     private string $sessionSavePath = 'tcp://127.0.0.1:6379';
     private string $userIpAddress   = '127.0.0.1';
 
-    protected function getInstance($options = [])
+    private function getInstance($options = [])
     {
         $defaults = [
             'driver'            => $this->sessionDriver,

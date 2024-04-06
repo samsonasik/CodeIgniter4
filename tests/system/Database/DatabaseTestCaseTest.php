@@ -14,7 +14,6 @@ namespace CodeIgniter\Database;
 use CodeIgniter\Test\CIUnitTestCase;
 use CodeIgniter\Test\DatabaseTestTrait;
 use Config\Database;
-use Config\Services;
 use Tests\Support\Database\Seeds\AnotherSeeder;
 use Tests\Support\Database\Seeds\CITestSeeder;
 
@@ -67,14 +66,6 @@ final class DatabaseTestCaseTest extends CIUnitTestCase
         $this->setUpMethods[] = 'setUpAddNamespace';
 
         parent::setUp();
-    }
-
-    protected function setUpAddNamespace(): void
-    {
-        Services::autoloader()->addNamespace(
-            'Tests\Support\MigrationTestMigrations',
-            SUPPORTPATH . 'MigrationTestMigrations'
-        );
     }
 
     protected function tearDown(): void

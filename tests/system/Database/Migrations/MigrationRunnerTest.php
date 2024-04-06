@@ -19,7 +19,6 @@ use CodeIgniter\Test\CIUnitTestCase;
 use CodeIgniter\Test\DatabaseTestTrait;
 use Config\Database;
 use Config\Migrations;
-use Config\Services;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use Tests\Support\MigrationTestMigrations\Database\Migrations\Migration_another_migration;
@@ -54,14 +53,6 @@ final class MigrationRunnerTest extends CIUnitTestCase
         $this->config = new Migrations();
 
         $this->config->enabled = true;
-    }
-
-    protected function setUpAddNamespace(): void
-    {
-        Services::autoloader()->addNamespace(
-            'Tests\Support\MigrationTestMigrations',
-            SUPPORTPATH . 'MigrationTestMigrations'
-        );
     }
 
     protected function tearDown(): void
@@ -476,7 +467,7 @@ final class MigrationRunnerTest extends CIUnitTestCase
         }
     }
 
-    protected function resetTables($db = null): void
+    private function resetTables($db = null): void
     {
         $forge = Database::forge($db);
 

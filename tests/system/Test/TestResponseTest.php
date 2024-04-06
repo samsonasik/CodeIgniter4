@@ -434,7 +434,7 @@ final class TestResponseTest extends CIUnitTestCase
         $this->testResponse->assertJSONExact($formatter->format($data));
     }
 
-    protected function getTestResponse(?string $body = null, array $responseOptions = [], array $headers = []): void
+    private function getTestResponse(?string $body = null, array $responseOptions = [], array $headers = []): void
     {
         $this->response = new Response(new App());
         $this->response->setBody($body);

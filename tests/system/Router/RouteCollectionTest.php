@@ -34,7 +34,7 @@ final class RouteCollectionTest extends CIUnitTestCase
         $this->resetFactories();
     }
 
-    protected function getCollector(array $config = [], array $files = [], $moduleConfig = null)
+    private function getCollector(array $config = [], $moduleConfig = null)
     {
         $defaults = [
             'Config' => APPPATH . 'Config',
@@ -1174,7 +1174,7 @@ final class RouteCollectionTest extends CIUnitTestCase
         $moduleConfig          = new Modules();
         $moduleConfig->enabled = true;
 
-        $routes = $this->getCollector($config, [], $moduleConfig);
+        $routes = $this->getCollector($config, $moduleConfig);
 
         $match = $routes->getRoutes();
 
@@ -1191,7 +1191,7 @@ final class RouteCollectionTest extends CIUnitTestCase
         $moduleConfig          = new Modules();
         $moduleConfig->enabled = true;
 
-        $routes = $this->getCollector($config, [], $moduleConfig);
+        $routes = $this->getCollector($config, $moduleConfig);
 
         $routes->add('testing', 'MainRoutes::index', ['as' => 'testing-index']);
 
